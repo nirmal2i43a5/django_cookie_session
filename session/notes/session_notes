@@ -1,0 +1,32 @@
+https://docs.djangoproject.com/en/3.0/topics/http/sessions/
+
+
+=>when new key is added then new cookie is formed
+=>This framework permits you to store and retrieve  based on user visit.
+=>In cookie,data in store in client machine but using session data is not stored in user machine
+=>U need to make table for using session
+=>cookie is store in client which does not data but it contains session id
+
+How you can store session ?
+1 ) django.contrib.session in install apps
+2 )store session in database  ==> python3 manage.py migrate but u dont need to use db just for using cookies
+3 )file based session = >
+
+SESSION_ENGINE = {
+    "django.contrib.sessions.backends.file"
+}
+
+You can also set path for file for storing session id 
+------------------------------------------------------
+SESSION_FILE_PATH (which defaults to output from tempfile.gettempdir())
+
+4 ) cookie based session :
+The session data will be stored using django tools for cryptographic signing and secret key
+
+SESSION_ENGINE = {
+    "django.contrib.sessions.backends.signed_cookies"
+}
+
+5 ) cache based session :
+For better performance you want to use cache based session.To store session data using
+django cache system you need to configire cache your cache

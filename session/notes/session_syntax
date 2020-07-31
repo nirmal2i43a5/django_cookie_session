@@ -1,0 +1,18 @@
+set item
+-------
+request.session['key] = 'value'
+
+get_item 
+--------
+returned_value = request.session['key']
+This raises Key Error if the given key is not already in the session
+
+delete 
+-----
+del request.session['key]
+
+U can check whether the given key is in session or not
+------------------------------------------------------
+if 'key' in request.session:
+    del----
+    

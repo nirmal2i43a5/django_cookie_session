@@ -1,0 +1,43 @@
+
+https://docs.djangoproject.com/en/3.0/topics/http/sessions/#setting-test-cookies
+
+
+1 )Keys()=>return views object that display all the keys in the dictionary
+syntax: dict.keys()
+
+2 ) flush()=>it deletes the current session data from the session and delete the session cookie.If u want to ensure
+that previous session data cannot be accessed  from the user browser then follow command .
+
+django.contrib.auth.logout() function calls it
+
+3 )get_session_cookie_age()+=>return the age of session cookie.
+
+4 )set_expiry(value)
+if value is datatime or deltatime object then session will expire at the specific datetime
+value = 0 means,user session will expire when the browser is closed
+value = None,use session expire policy
+
+5)set_test_cookie()#it sets test cookie to determine whether the user browser supports cookie or not
+similarly set its value and send to respective page for testing
+
+def checkTestCookie(request):#if it is working in the client browser then it return true else false
+    request.session.set_test_cookie()
+    return render(request,'session/setTestCookie.html')
+
+
+6 )test_cookie_worked()#return either True or False
+ex :https://docs.djangoproject.com/en/3.0/topics/http/sessions/#setting-test-cookies
+
+def checkTestCookie(request):#if it is working in the client browser then it return true else false
+    request.session.test_cookie_worked()
+    return render(request,'session/checkTestCookie.html')
+
+go to template and 
+
+{{request.session.test_cookie_worked}}
+
+
+
+7) delete_test_cookie()#
+
+
