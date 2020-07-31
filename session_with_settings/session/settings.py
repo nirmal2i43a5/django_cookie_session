@@ -120,7 +120,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-SESSION_COOKIE_AGE = 20#400 second
+SESSION_COOKIE_AGE = 20# 20 second
 
 '''When u change name,path,domain  it appends and form new cookie instead of overwrite.
 and there will be overwrite only when u change value 
@@ -135,5 +135,12 @@ and there will be overwrite only when u change value
 # SESSION_EXPIRE_AT_BROWSER = True#expire session when browser close default is true  (max use in bank site)
 # SESSION_FILE_PATH  = '       #define path where session is stored
 #SESSION_SAVE_EVERY_REQUEST = True # in every reqeuest session is save
+
+
+'''For file based session in django  overwrite SESSION_ENGINE '''
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.file'#now session does not store to database rather save to file
+SESSION_FILE_PATH = os.path.join(BASE_DIR, 'session_file')#go to session_file folder and store session in it
+
 
 
