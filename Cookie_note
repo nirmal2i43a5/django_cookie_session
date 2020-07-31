@@ -1,0 +1,9 @@
+
+https://medium.com/better-programming/managing-cookies-in-django-34981d9bf0ae
+=>Instead of using cookie it is better to use session in django with django-session framework 
+                                                                    -----------------
+=>small data send by web server(Application/cookie) to client browser.
+=>when i visit next time and send request then server knows that I have already visited that sites
+=>Cookie is use  to store information like cart,product,font,color and many details  added by client on browser
+=
+-----------------------------------------------------------------------------------
