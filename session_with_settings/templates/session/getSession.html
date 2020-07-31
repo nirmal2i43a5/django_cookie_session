@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Get Session</h1>
+    {{name}}<br>
+    <!--if i want keys -->
+  
+    {% for key in keys %}
+      {{key}}<br><!--name and lname are my keys-->
+    {% endfor %}<br><hr>
+    {% for key,value in items %}
+    {{key}}{{value}}<br><!--name and lname are my keys-->
+  
+  {% endfor %}
+  Age : {{age}}
+  <br>
+  For expiry date and time:<hr>
+  {{request.session.get_session_cookie_age}}<br>
+  {{request.session.get_expiry_age}}<br>
+  {{request.session.get_expiry_date}}<br>
+  {{request.session.get_expire_at_browser_close}}
+</body>
+</html>
