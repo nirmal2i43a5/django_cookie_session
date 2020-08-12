@@ -1,0 +1,27 @@
+One Time mother initialization
+One Time father initialization  
+One Time Brother initialization
+
+This is Brother before view
+This is father before view
+This is mother before view
+I am view
+THis is mother after view
+THis is father after view
+THis is Brother after view
+
+-------------------------------------------------------------------------------------
+But if i want to return response from fatherMiddleware without going to motherMiddleware then 
+------------------------------------------------------------------------------------------
+
+class fatherMiddleware:
+    def __init__(self,get_response):
+        self.get_response = get_response
+        print("One Time father initialization")
+        
+    def __call__(self,request):
+        print("This is father before view")
+        response = HttpResponse("THis msg in the browser") 
+        # You see this in the browser instead of given message in the view blc it does not go to the view instead return response from middleware
+        print("THis is father after view")
+        return response
